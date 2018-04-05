@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Text, View, Image, Button } from 'react-native'
-import styles from './style/style'
+import styles from '../style/style'
 
-const imgShow = require('./img/gtx2080.jpg')
+const imgShow = require('../img/gtx2080.jpg')
 
 class Show extends Component {
     render() {

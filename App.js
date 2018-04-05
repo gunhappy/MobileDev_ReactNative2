@@ -6,24 +6,35 @@ import {
   View
 } from 'react-native'
 
-import Landing from './Landing'
-import Show from './Show' 
+import Menu from './screen/Menu'
+import Register from './screen/Register'
+import Login from './screen/Login'
+import Landing from './screen/Landing'
+import Show from './screen/Show'
 
 export default class App extends Component {
+
   state = {
-    currentScreen: 'landing'
+      currentScreen: 'menu'
   }
 
   switchScreen = (screen) => {
-    this.setState({ currentScreen: screen })
+      this.setState({ currentScreen: screen })
   }
 
   renderScreen = () => {
-    if (this.state.currentScreen === 'landing') {
-      return <Landing switchScreen={this.switchScreen}/>
-    } else {
-      return <Show switchScreen={this.switchScreen}/>
-    }
+      if (this.state.currentScreen === 'register') {
+          return <Register switchScreen={this.switchScreen}/>
+      } else if (this.state.currentScreen === 'login') {
+          return <Login switchScreen={this.switchScreen}/>
+      } else if (this.state.currentScreen === 'landing') {
+          return <Landing switchScreen={this.switchScreen}/>
+      } else if (this.state.currentScreen === 'show') {
+          return <Show switchScreen={this.switchScreen}/>
+      }
+      else {
+        return <Menu switchScreen={this.switchScreen}/>
+      }
   }
 
   render() {

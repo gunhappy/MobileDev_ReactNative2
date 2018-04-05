@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Text, View, Image, Button } from 'react-native'
-import styles from './style/style'
+import styles from '../style/style'
 
-const image = require('./img/logo.png')
+const image = require('../img/logo.png')
 
 class Landing extends Component {
     render() {
@@ -14,6 +14,12 @@ class Landing extends Component {
                     <Button 
                         title='Click to go to next view'
                         onPress={() => this.props.switchScreen('show')}
+                    />
+                </View>
+                <View style={styles.buttonContainer}>
+                    <Button 
+                        title='Logout'
+                        onPress={() => this.props.switchScreen('menu')}
                     />
                 </View>
             </View>
